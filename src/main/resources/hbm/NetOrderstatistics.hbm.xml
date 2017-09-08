@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetOrderstatistics" table="net_orderstatistics" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="total">
+            <column name="total" sql-type="int(11)"/>
+        </property>
+        <property name="completecount">
+            <column name="completecount" sql-type="int(11)"/>
+        </property>
+        <property name="cancelcount">
+            <column name="cancelcount" sql-type="int(11)"/>
+        </property>
+        <property name="immediatecount">
+            <column name="immediatecount" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="reservationcount">
+            <column name="reservationcount" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="money">
+            <column name="money" sql-type="float" precision="-1"/>
+        </property>
+        <property name="mileage">
+            <column name="mileage" sql-type="float" precision="-1"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="duration">
+            <column name="duration" sql-type="float" precision="-1"/>
+        </property>
+        <property name="statisticsdate">
+            <column name="statisticsdate" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

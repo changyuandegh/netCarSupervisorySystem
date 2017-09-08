@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetDrivergps" table="net_drivergps" >
+        <id name="drivergpsid">
+            <column name="drivergpsid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="licenseid">
+            <column name="licenseid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="driverregioncode">
+            <column name="driverregioncode" sql-type="int(11)"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="positiontime">
+            <column name="positiontime" sql-type="timestamp"/>
+        </property>
+        <property name="longitude">
+            <column name="longitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="latitude">
+            <column name="latitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="encrypt">
+            <column name="encrypt" sql-type="int(11)"/>
+        </property>
+        <property name="direction">
+            <column name="direction" sql-type="int(11)"/>
+        </property>
+        <property name="elevation">
+            <column name="elevation" sql-type="int(11)"/>
+        </property>
+        <property name="speed">
+            <column name="speed" sql-type="int(11)"/>
+        </property>
+        <property name="bizstatus">
+            <column name="bizstatus" sql-type="int(11)"/>
+        </property>
+        <property name="orderno">
+            <column name="orderno" sql-type="bigint(20)" not-null="true"/>
+        </property>
+        <property name="orderstatus">
+            <column name="orderstatus" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="alarmstate">
+            <column name="alarmstate" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="isonline">
+            <column name="isonline" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

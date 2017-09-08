@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetTodayalarm" table="net_todayalarm" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="alarmid">
+            <column name="alarmid" sql-type="int(11)"/>
+        </property>
+        <property name="alarmtype">
+            <column name="alarmtype" sql-type="int(11)"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="position">
+            <column name="position" sql-type="varchar(255)"/>
+        </property>
+        <property name="longitude">
+            <column name="longitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="latitude">
+            <column name="latitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="encrypt">
+            <column name="encrypt" sql-type="int(10)" not-null="true"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="alarmtime">
+            <column name="alarmtime" sql-type="timestamp"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="result">
+            <column name="result" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="processtime">
+            <column name="processtime" sql-type="timestamp"/>
+        </property>
+        <property name="userid">
+            <column name="userid" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

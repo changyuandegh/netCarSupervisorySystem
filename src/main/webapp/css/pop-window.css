@@ -1,0 +1,137 @@
+/*弹窗*/
+/*信息弹窗*/
+/*遮罩层*/
+#mark{
+	display:none;
+	position:fixed;
+	z-index:10;
+	background:rgba(0,0,0,0.4);
+	height:9999px;
+	width:100%;
+}
+.information-window{
+	display:none;
+	position:fixed;
+	top:100px;
+	margin-left:20%;
+	width:60%;
+	height:440px;
+	background:#fff;
+	z-index:99;
+	overflow:hide;
+	border-radius:5px;
+}
+.window-base{
+	width:100%;
+	height:375px;
+	overflow:hide;
+}
+.window-base>div{
+	box-sizing:border-box;
+	float:left;
+	height:100%;
+}
+.window-base>div:first-child{
+	padding-top:2px;
+	padding-right:6px;
+	width:22%;
+}
+.window-base>div:first-child>img{
+	width:100%;
+}
+.window-base>div:last-child{
+	border:1px solid #dfdfdf;
+	/*padding:10px;*/
+	color:#595959;
+	border-radius:4px;
+	background:#fff;
+	overflow:auto;
+	width:78%;
+}
+.window-base>div:last-child>p{
+	font-size:13px;
+	margin:0;
+	padding:5px 0 9px 5px;
+}
+.window-base>div:last-child>p:nth-child(odd){
+	background:#F2F2F2;
+}
+.window-close{
+	position:absolute;
+	width:30px;
+	height:30px;
+	z-index:21;
+	right:10px;
+	top:10px;
+}
+
+/*修改弹窗*/
+.edit-factory{
+font-size: 14px;
+color: #354052;
+}
+.edit-factory>input{
+	font-size:12px;
+	border:1px solid #DFE3E9;
+	border-radius:4px;
+	width:216px;
+	height:28px;
+}
+#window-sure{
+	width:400px;
+	/*margin-left:37%;*/
+	height:280px;
+}
+#window-sure>center>img{
+	width:110px;
+	margin-top:30px;
+}
+#window-sure>center>p{
+	margin-top:20px;
+	line-height:10px;
+	font-size: 20px;
+	color: #354052;
+}
+#window-sure>center>p:last-child{
+	font-size: 14px;
+	color: #7F8FA4;
+}
+#sure-bottom{
+	bottom:0px;
+	position:absolute;
+	width:100%;
+	height:60px;
+	background:#F5F8FA;
+	border-radius:0 0 4px 4px;
+}
+#sure-bottom>div{
+	line-height:35px;
+	display:inline-block;
+	height:35px;
+	box-sizing:border-box;
+	border:1px solid #CED0DA;
+	margin-top:12px;
+	border-radius:4px;
+}
+#sure-bottom>div:first-child{
+	font-size: 14px;
+color: #7383A1;
+	width:72px;
+	background-image: linear-gradient(-180deg, #FFFFFF 3%, #F2F4F7 98%);
+}
+#sure-bottom>div:last-child{
+	background-image: linear-gradient(-180deg, #39B54A 0%, #34AA44 98%);
+	margin-left:20px;
+	width:96px;
+	font-size: 14px;
+	color:#ffffff;
+}
+
+
+
+
+
+
+
+
+

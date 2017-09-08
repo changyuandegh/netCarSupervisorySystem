@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetDriverbaseinfo" table="net_driverbaseinfo">
+        <id name="driverid">
+            <column name="driverid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="drivername">
+            <column name="drivername" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="driverphone">
+            <column name="driverphone" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="drivergender">
+            <column name="drivergender" sql-type="varchar(2)" length="2"/>
+        </property>
+        <property name="driverbirthday">
+            <column name="driverbirthday" sql-type="date"/>
+        </property>
+        <property name="drivernationality">
+            <column name="drivernationality" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="drirvernation">
+            <column name="drirvernation" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="drivermaritalstatus">
+            <column name="drivermaritalstatus" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="drirverlanguagelevel">
+            <column name="drirverlanguagelevel" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="drivereducation">
+            <column name="drivereducation" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="drivercensus">
+            <column name="drivercensus" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="driveraddress">
+            <column name="driveraddress" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="drirvercontactaddress">
+            <column name="drirvercontactaddress" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="photoid">
+            <column name="photoid" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="licenseid">
+            <column name="licenseid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="licensephotoid">
+            <column name="licensephotoid" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="drivertype">
+            <column name="drivertype" sql-type="varchar(16)" length="16" not-null="true"/>
+        </property>
+        <property name="getdriverlicensedate">
+            <column name="getdriverlicensedate" sql-type="date"/>
+        </property>
+        <property name="driverlicenseon">
+            <column name="driverlicenseon" sql-type="date"/>
+        </property>
+        <property name="drverlicenseoff">
+            <column name="drverlicenseoff" sql-type="date"/>
+        </property>
+        <property name="tavidriver">
+            <column name="tavidriver" sql-type="int(11)"/>
+        </property>
+        <property name="emergencycontact">
+            <column name="emergencycontact" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="emergencycontactphone">
+            <column name="emergencycontactphone" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="emergencycontactaddress">
+            <column name="emergencycontactaddress" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)"/>
+        </property>
+        <property name="registerdate">
+            <column name="registerdate" sql-type="date"/>
+        </property>
+        <property name="contractcompany">
+            <column name="contractcompany" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="contracton">
+            <column name="contracton" sql-type="timestamp"/>
+        </property>
+        <property name="getnetworkcarproofdate">
+            <column name="getnetworkcarproofdate" sql-type="timestamp"/>
+        </property>
+        <property name="fulltimedriver">
+            <column name="fulltimedriver" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="indriverblacklist">
+            <column name="indriverblacklist" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="commercialtype">
+            <column name="commercialtype" sql-type="int(11)"/>
+        </property>
+        <property name="cycle">
+            <column name="cycle" sql-type="float" precision="-1"/>
+        </property>
+        <property name="ordercount">
+            <column name="ordercount" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="trafficviolationcount">
+            <column name="trafficviolationcount" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="complainedcount">
+            <column name="complainedcount" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="creditpoints">
+            <column name="creditpoints" sql-type="int(11)"/>
+        </property>
+        <property name="netcertificateid">
+            <column name="netcertificateid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="driverappinfoid">
+            <column name="driverappinfoid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="courseid">
+            <column name="courseid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

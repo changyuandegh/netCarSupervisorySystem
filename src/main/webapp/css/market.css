@@ -1,0 +1,234 @@
+/*市场把控*/
+.bg{
+	display:inline-block;
+	width: 130px;
+	height: 23px;
+	background:url("../pic/market/star_gray.png") no-repeat;
+}
+.over{
+	height:23px;
+	background:url("../pic/market/star_org.png") no-repeat;
+}
+.market{
+	width:100%;
+	height:20px;
+	padding:0 7px 7px 0;
+}
+.market>img{
+	height:13px;
+	margin-right:7px;
+}
+.market2{
+	text-indent:15%;
+}
+
+#market-top{
+	height:50px;
+	width:97%;
+	margin:0 auto;
+	line-height:50px;
+	border-bottom:1px solid #a8aab7;
+}
+#market-top>div{
+	float:right;
+	color:#354052;
+}
+#market-top>div>input{
+width: 298px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 1px #dfe3e9;
+  margin:0 10px;
+}
+#market-content{
+	width:97%;
+	margin:0 auto;
+	height:300px;
+	margin-top:20px;
+}
+#market-content>div{
+	border-radius:4px;
+	background:#fff;
+	width:31.3333333%;
+	height:100%;
+	float:left;
+	border: solid 1px #e6eaee;
+}
+#market-content>div:first-child{
+	margin-right:3%;
+}
+#market-content>div:last-child{
+	margin-left:3%;
+}
+.market-tit{
+	width:90%;
+	margin:0 auto;
+	margin-bottom:30px;
+	height:40px;
+	text-align:center;
+	color: #354052;
+	font-size:19px;
+	line-height:40px;
+	border-bottom:1px solid #e6eaee;
+}
+.square{
+	display:inline-block;
+	width:13px;
+	height:13px;
+	background:#ead536;
+	border-radius:2px;
+}
+.fell-loop{
+	width:100%;
+	height:40px;
+	position:absolute;
+	left:0;
+	top:52%;
+}
+
+/*评价反馈*/
+#appraise-top{
+	width:100%;
+	height:70px;
+	line-height:70px;
+	width:97%;
+	margin:0 auto;
+	border-bottom:1px solid #e6eaee;
+}
+.appraise-select{
+  width: 96px;
+  height: 28px;
+  border-radius: 4px;
+  background-image: linear-gradient(to top, #f2f4f7, #ffffff);
+  border: solid 1px #dfe3e9;
+}
+.appraise-middel{
+	width:97%;
+	height:70px;
+	background:#f5f8fa;
+	margin:0 auto;
+}
+.appraise-middel>div{
+	width:100%;
+	height:50%;
+	line-height:35px;
+	text-indent:10px;
+	background-color: #f5f8fa;
+}
+#appraise-content{
+	width:97%;
+	height:400px;
+	margin:0 auto;
+}
+#appraise-content>div{
+	float:left;
+	height:100%;
+}
+#appraise-content>div:first-child{
+	padding-right:100px;
+	width:75%;
+}
+#appraise-content>div:last-child{
+	width:25%;
+	overflow:hidden;
+	/*height:550px;*/
+}
+#appraise-content>div:first-child>div{
+	height:33.333333333%;
+	width:100%;
+	border-bottom:1px solid #e6eaee;
+}
+#appraise-content>div:first-child>div>img{
+	width:80px;
+	float:left;
+	margin:13px 10px 0px 17px;
+}
+.appraise-list{
+	margin-top:20px;
+	width:83%;
+	height:70px;
+	float:left;
+}
+.appraise-list>div{
+	height:33.333333333%;
+	/*border:1px solid;*/
+}
+.appraise-list>div:last-child>img{
+	width:18px;
+	margin-right:5px;
+}
+.appraise-list>div:last-child>p{
+	line-height:9px;
+	font-size:12px;
+	color:#7f8fa4;
+}
+#appraise-content>div:last-child>img{
+	width:200px;
+}
+#appraise-content>div:last-child>p{
+	margin-top:10px;
+	color:#7f8fa4;
+	line-height:10px;
+	font-size:14px;
+}
+/*运价弹窗*/
+.price-window{
+	position:fixed;
+	top:100px;
+	margin-left:20%;
+	width:60%;
+	height:340px;
+	background:#fff;
+	z-index:99;
+	overflow:hide;
+	border-radius:5px;
+	border:1px solid #dfdfdf;
+}
+.price-window>div{
+	width:100%;
+}
+.price-window>div:first-child{
+	height:45px;
+	background:#f5f8fa;
+	line-height:45px;
+	color:#5a687b;
+	text-indent:20px;
+	position:relative;
+}
+.price-window>div:last-child{
+	height:100%;
+}
+.price-window>div:last-child>div{
+	float:left;
+	height:90%;
+}
+.price-window>div:last-child>div:first-child{
+	width:25%;
+}
+.price-window>div:last-child>div:last-child{
+	width:72%;
+	margin-right:3%;
+	border-radius:5px;
+	height:250px;
+	border:1px solid #dfdfdf;
+	margin-top:10px;
+	overflow:auto;
+}
+.price-window>div:last-child>div:first-child>img{
+	width:85%;
+	margin-left:7.5%;
+	margin-top:10px;
+}
+.price-window>div:last-child>div:last-child>p{
+	height:27px;
+	width:100%;
+	line-height:27px;
+	color:#354052;
+	font-size:12px;
+	margin:0;
+	text-indent:10px;
+}
+.price-window>div:last-child>div:last-child>p:nth-child(odd){
+	background:#fafbfc;
+}

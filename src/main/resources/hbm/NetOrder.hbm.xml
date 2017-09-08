@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetOrder" table="net_order" >
+        <id name="orderid">
+            <column name="orderid" sql-type="bigint(20)"/>
+            <generator class="native"/>
+        </id>
+        <property name="netorderid">
+            <column name="netorderid" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="departtime">
+            <column name="departtime" sql-type="timestamp"/>
+        </property>
+        <property name="ordertime">
+            <column name="ordertime" sql-type="timestamp"/>
+        </property>
+        <property name="passengernote">
+            <column name="passengernote" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="departure">
+            <column name="departure" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="deplongitude">
+            <column name="deplongitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="deplatitude">
+            <column name="deplatitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="destination">
+            <column name="destination" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="destlongitute">
+            <column name="destlongitute" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="destlatitude">
+            <column name="destlatitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="encrypt">
+            <column name="encrypt" sql-type="int(11)"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)"/>
+        </property>
+        <property name="fareid">
+            <column name="fareid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="longitude">
+            <column name="longitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="latitude">
+            <column name="latitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="licenseid">
+            <column name="licenseid" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="driverphone">
+            <column name="driverphone" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="destributetime">
+            <column name="destributetime" sql-type="timestamp"/>
+        </property>
+        <property name="canceltime">
+            <column name="canceltime" sql-type="timestamp"/>
+        </property>
+        <property name="canceltypecode">
+            <column name="canceltypecode" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="operator">
+            <column name="operator" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="cartype">
+            <column name="cartype" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="businesstype">
+            <column name="businesstype" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="ordertype">
+            <column name="ordertype" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="callphone">
+            <column name="callphone" sql-type="int(11)"/>
+        </property>
+        <property name="passengerphone">
+            <column name="passengerphone" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="passengercount">
+            <column name="passengercount" sql-type="int(11)"/>
+        </property>
+        <property name="ordercalltype">
+            <column name="ordercalltype" sql-type="int(11)"/>
+        </property>
+        <property name="acceptlongitude">
+            <column name="acceptlongitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="acceptlatitude">
+            <column name="acceptlatitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="actualgoonbus">
+            <column name="actualgoonbus" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="ispay">
+            <column name="ispay" sql-type="int(11)"/>
+        </property>
+        <property name="ispingjia">
+            <column name="ispingjia" sql-type="int(11)"/>
+        </property>
+        <property name="deptime">
+            <column name="deptime" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="depmileage">
+            <column name="depmileage" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="depamount">
+            <column name="depamount" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+        <property name="ordertrajectoryid">
+            <column name="ordertrajectoryid" sql-type="bigint(20)"/>
+        </property>
+    </class>
+</hibernate-mapping>

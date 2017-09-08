@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetUser" table="net_user">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="cname">
+            <column name="cname" sql-type="varchar(25)" length="25"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(255)"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="creator">
+            <column name="creator" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="loginouttime">
+            <column name="loginouttime" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="areaid">
+            <column name="areaid" sql-type="int(6)" not-null="true"/>
+        </property>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="loginIp">
+            <column name="loginIp" sql-type="varchar(12)" length="12" not-null="true"/>
+        </property>
+        <property name="logintime">
+            <column name="logintime" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

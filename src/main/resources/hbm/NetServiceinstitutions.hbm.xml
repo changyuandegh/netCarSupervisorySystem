@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetServiceinstitutions" table="net_serviceinstitutions">
+        <id name="serviceinstitutionsid">
+            <column name="serviceinstitutionsid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="servicename">
+            <column name="servicename" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="serviceno">
+            <column name="serviceno" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="detailaddress">
+            <column name="detailaddress" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="responsiblename">
+            <column name="responsiblename" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="responsiblephone">
+            <column name="responsiblephone" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="managername">
+            <column name="managername" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="managephone">
+            <column name="managephone" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="contactphone">
+            <column name="contactphone" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="mailaddress">
+            <column name="mailaddress" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="createdate">
+            <column name="createdate" sql-type="date"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetPassengerstatistics" table="net_passengerstatistics">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="psgid">
+            <column name="psgid" sql-type="int(11)"/>
+        </property>
+        <property name="ordercount">
+            <column name="ordercount" sql-type="int(11)"/>
+        </property>
+        <property name="moneycount">
+            <column name="moneycount" sql-type="float" precision="-1"/>
+        </property>
+        <property name="ordercancelcount">
+            <column name="ordercancelcount" sql-type="int(11)"/>
+        </property>
+        <property name="ordercompletecount">
+            <column name="ordercompletecount" sql-type="int(11)"/>
+        </property>
+        <property name="violatecount">
+            <column name="violatecount" sql-type="int(11)"/>
+        </property>
+        <property name="mileage">
+            <column name="mileage" sql-type="float" precision="-1"/>
+        </property>
+        <property name="complainedcount">
+            <column name="complainedcount" sql-type="int(11)"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

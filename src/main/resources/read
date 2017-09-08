@@ -1,0 +1,27 @@
+ 郑州服务器 node1:
+ 1. 项目上传账号:
+    user: qinjianchao
+    pass: qinjianchaonode!
+    port: 12233
+    ip: 192.168.1.11  公网ip: 125.46.90.211
+
+2. tomcat url: http://192.168.1.11:10005
+   公网ip: http://125.46.90.211:10005
+   日志路径: /var/log/netCallUp/netCarInfoManage
+   项目上传目录:/home/qinjianchao/netCallUp/netCarInfoManage
+
+
+   ## DB name: netcarinformanage_test
+   user: user_netcarinfor
+   pass: user_netcarinformanage_pass
+
+   redis:
+   pass:(redis.6379.192.168.1.11)
+
+   局域网ip: 192.168.1.13
+   公网ip: 125.46.90.213
+
+3.设计稿效果在此处查看
+  URL:  https://zpl.io/10RMrt
+  账号:  y18002333669@126.com
+  密码:  qwerty

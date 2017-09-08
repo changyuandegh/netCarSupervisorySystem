@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetDriverappinfo" table="net_driverappinfo" >
+        <id name="driverappinfoid">
+            <column name="driverappinfoid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="nettype">
+            <column name="nettype" sql-type="int(11)"/>
+        </property>
+        <property name="appversion">
+            <column name="appversion" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="maptype">
+            <column name="maptype" sql-type="int(11)"/>
+        </property>
+        <property name="phonemodel">
+            <column name="phonemodel" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="phonebrand">
+            <column name="phonebrand" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="imei">
+            <column name="imei" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="macaddress">
+            <column name="macaddress" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="system">
+            <column name="system" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="systemversion">
+            <column name="systemversion" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="ip">
+            <column name="ip" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

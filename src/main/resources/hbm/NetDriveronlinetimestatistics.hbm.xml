@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetDriveronlinetimestatistics" table="net_driveronlinetimestatistics">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="driverid">
+            <column name="driverid" sql-type="int(11)"/>
+        </property>
+        <property name="duration">
+            <column name="duration" sql-type="float" precision="-1"/>
+        </property>
+        <property name="statisticsdate">
+            <column name="statisticsdate" sql-type="timestamp"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

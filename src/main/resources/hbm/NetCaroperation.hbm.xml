@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetCaroperation" table="net_caroperation" >
+        <id name="id">
+        <column name="id" sql-type="bigint(20)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="appid">
+            <column name="appid" sql-type="bigint(20)"/>
+        </property>
+        <property name="licenseid">
+            <column name="licenseid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="logintime">
+            <column name="logintime" sql-type="timestamp"/>
+        </property>
+        <property name="logouttime">
+            <column name="logouttime" sql-type="timestamp"/>
+        </property>
+        <property name="loginlongitude">
+            <column name="loginlongitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="loginlatitude">
+            <column name="loginlatitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="logoutlongitute">
+            <column name="logoutlongitute" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="logoutlatitude">
+            <column name="logoutlatitude" sql-type="double(10,7)" precision="10" scale="7" not-null="true"/>
+        </property>
+        <property name="encrypt">
+            <column name="encrypt" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

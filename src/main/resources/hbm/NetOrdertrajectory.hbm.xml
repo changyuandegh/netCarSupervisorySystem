@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetOrdertrajectory" table="net_ordertrajectory" >
+        <id name="ordertrajectoryid">
+            <column name="ordertrajectoryid" sql-type="bigint(20)"/>
+            <generator class="native"/>
+        </id>
+        <property name="orderid">
+            <column name="orderid" sql-type="bigint(20)"/>
+        </property>
+        <property name="ordertrajectory">
+            <column name="ordertrajectory" sql-type="longtext"/>
+        </property>
+    </class>
+</hibernate-mapping>

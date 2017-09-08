@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/aop
+    	http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+    	http://www.springframework.org/schema/tx
+    	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+    	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+        ">
+        
+     <!-- 自动扫描的包注解 -->
+	  <context:annotation-config />
+	 
+	  <context:component-scan base-package="com.netcar"/>
+
+	<!-- Hibernate4 -->
+	<!-- 加载资源文件  其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载-->
+	<context:property-placeholder location="classpath:mysql.properties" />
+
+
+   <!-- druid localURL====================infoManage==================================== -->
+   <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<!-- 基本属性 url、user、password -->
+		<property name="url" value="${durid.url}"/>
+		<property name="username" value="${durid.user}" />
+		<property name="password" value="${durid.password}"/>
+
+
+	    <property name="driverClassName" value="${durid.driverClassName}"/>
+
+	    <!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="3" />
+		<property name="minIdle" value="30" />
+		<property name="maxActive" value="200" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<!--<property name="maxWait" value="6000" />-->
+	   <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 000-->
+	   <property name="timeBetweenEvictionRunsMillis" value="3000" />
+	   <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+	   <property name="minEvictableIdleTimeMillis" value="100" />
+	   <!-- 每10秒检查移除连接 -->
+	   <property name="removeAbandoned" value="true" />
+	   <property name="removeAbandonedTimeout" value="10"/>
+	   <property name="testWhileIdle" value="true" />
+	   <property name="testOnBorrow" value="true" />
+	   <property name="testOnReturn" value="false" />
+
+	   <!--&lt;!&ndash; 打开PSCache，并且指定每个连接上PSCache的大小 &ndash;&gt;-->
+	   <!--<property name="poolPreparedStatements" value="true" />-->
+	   <!--<property name="maxPoolPreparedStatementPerConnectionSize"-->
+				 <!--value="200000" />-->
+		<!---->
+
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		 <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+	     <!--<property name="filters" value="stat" />-->
+	     <!-- 解密密码必须要配置的项 druid密文加密过-->
+	     <!-- druid密码加密命令java -cp druid-1.0.16.jar com.alibaba.druid.filter.config.ConfigTools 密码  -->
+        <property name="filters" value="config,stat,wall"/>
+        <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${durid.publickey}"/>
+	</bean>
+   
+   <bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="druidDataSource" />
+		 <property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:hbm</value>
+			</list>
+		</property>
+		<!--  <property name="packagesToScan">
+			<list>
+				<value>com.infoManage.entity</value>
+			</list>
+			<property name="connection.autocommit">false</property>
+		</property>  -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="connection.autocommit">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="current_session_context_class">thread</prop>
+				<prop key="hibernate.default_batch_fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+			</props>
+		</property>
+   </bean>
+
+	<!-- 配置Hibernate事务管理器 -->
+	<bean id="transactionManager"
+    	class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+      <property name="sessionFactory" ref="sessionFactory" />
+   </bean>
+
+	<!--  声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED"  />
+			<tx:method name="save*" propagation="SUPPORTS" />
+			<tx:method name="del*" propagation="SUPPORTS" />
+			<tx:method name="update*" propagation="SUPPORTS" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config expose-proxy="true">
+		<!-- 只对业务逻辑层实施事务 -->
+		<aop:pointcut id="txPointcut" expression="execution(* com.netcar.serviceImpl..*.*(..))" />
+		<!-- Advisor定义，切入点和通知分别为txPointcut、txAdvice -->
+		<aop:advisor pointcut-ref="txPointcut" advice-ref="txAdvice"/>
+	</aop:config>
+
+   <!-- 配置事务异常封装 -->
+   <bean id="persistenceExceptionTranslationPostProcessor" 
+   	class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+
+	<!-- druid spring 监控配置 -->
+	<bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor" />
+	<bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
+		<property name="patterns">
+			<list>
+				<value>com.netcar.service.*</value>
+				<value>com.netcar.dao.*</value>
+			</list>
+		</property>
+	</bean>
+	<aop:config proxy-target-class="true">
+	  <aop:advisor  pointcut-ref="druid-stat-pointcut" advice-ref="druid-stat-interceptor"/>
+    </aop:config>
+
+	<!--文件路径初始化配置-->
+	<bean id="contextData" class="com.netcar.tools.ContextData">
+		<property name="baseinfoCompanyLeagPhoto" value="${baseinfoCompany.leagPhoto}"/>
+		<property name="baseinfoDriverLicensePhotoId" value="${baseinfoDriver.licensePhotoId}"/>
+		<property name="baseinfoDriverPhotoId" value="${baseinfoDriver.PhotoId}"/>
+		<property name="baseinfoVehiclePhotoId" value="${baseinfoVehicle.photoId}"/>
+	</bean>
+
+	<!--==============================jedis配置==============================================-->
+   <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+       <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+       <property name="maxWaitMillis" value="${redis.pool.maxWait}"/>
+       <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+   </bean>
+
+   <!-- redis服务器中心 -->
+   <bean id="connectionFactory"
+       class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+       <property name="poolConfig" ref="poolConfig" />
+       <property name="port" value="${redis.port}" />
+       <property name="hostName" value="${redis.host}" />
+	   <!--<property name="database" value="0"/>-->
+       <property name="password" value="${redis.pwd}" />
+       <property name="timeout" value="${redis.timeout}"/>
+   </bean>
+
+
+   <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+       <property name="connectionFactory" ref="connectionFactory" />
+	   <!--注意:修改默认序列化类,否则序列化存储时的K,V值会加特殊前缀 -->
+	   <property name="keySerializer">
+		   <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+	   </property>
+	   <property name="hashKeySerializer">
+		   <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+	   </property>
+	   <property name="valueSerializer">
+		   <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+	   </property>
+	   <property name="hashValueSerializer">
+		   <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+	   </property>
+   </bean>
+
+	<!--publish/subscribe-->
+	<bean id="registerMessageListener" class="com.netcar.listenner.RegisterMessageListener">
+		<property name="redisTemplate" ref="redisTemplate"></property>
+	</bean>
+	<bean id="priDocRegActMsgListener" class="com.netcar.listenner.PriDocRegActMsgListener">
+		<property name="redisTemplate" ref="redisTemplate"></property>
+	</bean>
+	<bean id="topicContainer" class="org.springframework.data.redis.listener.RedisMessageListenerContainer" destroy-method="destroy">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="taskExecutor">
+			<bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler">
+				<property name="poolSize" value="2"></property>
+			</bean>
+		</property>
+		<property name="messageListeners">
+			<map>
+				<entry key-ref="registerMessageListener">
+					<bean class="org.springframework.data.redis.listener.ChannelTopic">
+						<constructor-arg value="coupon|redenvelop|notify|points" />
+					</bean>
+				</entry>
+				<entry key-ref="priDocRegActMsgListener">
+					<bean class="org.springframework.data.redis.listener.ChannelTopic">
+						<!--订阅频道名称,紧急报警:sosalarm:areacode-->
+						<constructor-arg value="sosalarm:410000" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<!--bean初始化完成-->
+<bean class="com.netcar.tools.InstantiationTracingBeanPostProcessor"></bean>
+
+
+
+</beans>

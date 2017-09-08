@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetCompanypayinfo" table="net_companypayinfo">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="payname">
+            <column name="payname" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="payid">
+            <column name="payid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="paytype">
+            <column name="paytype" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="payscope">
+            <column name="payscope" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="preparebank">
+            <column name="preparebank" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="countdate">
+            <column name="countdate" sql-type="int(11)"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

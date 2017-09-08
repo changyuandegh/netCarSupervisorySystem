@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetPricealarm" table="net_pricealarm" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="driverid">
+            <column name="driverid" sql-type="int(11)"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="orderid">
+            <column name="orderid" sql-type="bigint(20)"/>
+        </property>
+        <property name="ordermileage">
+            <column name="ordermileage" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="ordertime">
+            <column name="ordertime" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="ordermoney">
+            <column name="ordermoney" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="avespeed">
+            <column name="avespeed" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="int(11)"/>
+        </property>
+        <property name="alarmtime">
+            <column name="alarmtime" sql-type="timestamp"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="result">
+            <column name="result" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="processtime">
+            <column name="processtime" sql-type="timestamp"/>
+        </property>
+        <property name="userid">
+            <column name="userid" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

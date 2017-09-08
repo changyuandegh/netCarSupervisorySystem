@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetEtag" table="net_etag" >
+        <id name="etagid">
+            <column name="etagid" sql-type="varchar(50)" length="50"/>
+            <generator class="assigned" />
+        </id>
+        <property name="brand">
+            <column name="brand" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="model">
+            <column name="model" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="imei">
+            <column name="imei" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="installdate">
+            <column name="installdate" sql-type="date"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

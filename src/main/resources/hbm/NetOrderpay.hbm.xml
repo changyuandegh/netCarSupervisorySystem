@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetOrderpay" table="net_orderpay" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="orderid">
+            <column name="orderid" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="onarea">
+            <column name="onarea" sql-type="int(6)"/>
+        </property>
+        <property name="drivername">
+            <column name="drivername" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="licenseid">
+            <column name="licenseid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="faretype">
+            <column name="faretype" sql-type="varchar(16)" length="16"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="bookdeptime">
+            <column name="bookdeptime" sql-type="timestamp"/>
+        </property>
+        <property name="waittime">
+            <column name="waittime" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="deplongitude">
+            <column name="deplongitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="deplatitude">
+            <column name="deplatitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="deparea">
+            <column name="deparea" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="deptime">
+            <column name="deptime" sql-type="timestamp"/>
+        </property>
+        <property name="destlongitude">
+            <column name="destlongitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="destlatitude">
+            <column name="destlatitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="destarea">
+            <column name="destarea" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="destTime">
+            <column name="DestTime" sql-type="timestamp"/>
+        </property>
+        <property name="bookmodel">
+            <column name="bookmodel" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="model">
+            <column name="model" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="drivemile">
+            <column name="drivemile" sql-type="double(10,5)" precision="10" scale="5"/>
+        </property>
+        <property name="drivetime">
+            <column name="drivetime" sql-type="int(11)"/>
+        </property>
+        <property name="waitmile">
+            <column name="waitmile" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="factprice">
+            <column name="factprice" sql-type="double(10,5)" precision="10" scale="5"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="cashprice">
+            <column name="cashprice" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="linename">
+            <column name="linename" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="lineprice">
+            <column name="lineprice" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="posname">
+            <column name="posname" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="posprice">
+            <column name="posprice" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="benfitprice">
+            <column name="benfitprice" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="booktip">
+            <column name="booktip" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="passengertip">
+            <column name="passengertip" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="peakupprice">
+            <column name="peakupprice" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="nightupprice">
+            <column name="nightupprice" sql-type="double(10,5)" precision="10" scale="5" not-null="true"/>
+        </property>
+        <property name="farupprice">
+            <column name="farupprice" sql-type="double(10,5)" precision="10" scale="5"/>
+        </property>
+        <property name="otherupprice">
+            <column name="otherupprice" sql-type="double(10,5)" precision="10" scale="5"/>
+        </property>
+        <property name="paystate">
+            <column name="paystate" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="paytime">
+            <column name="paytime" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="ordermatchtime">
+            <column name="ordermatchtime" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="invoicestatus">
+            <column name="invoicestatus" sql-type="varchar(32)" length="32"/>
+        </property>
+    </class>
+</hibernate-mapping>

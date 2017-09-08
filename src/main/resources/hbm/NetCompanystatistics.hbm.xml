@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetCompanystatistics" table="net_companystatistics" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="ordercount">
+            <column name="ordercount" sql-type="int(11)"/>
+        </property>
+        <property name="moneycount">
+            <column name="moneycount" sql-type="float" precision="-1"/>
+        </property>
+        <property name="ordercancelcount">
+            <column name="ordercancelcount" sql-type="int(11)"/>
+        </property>
+        <property name="ordercompletecount">
+            <column name="ordercompletecount" sql-type="int(11)"/>
+        </property>
+        <property name="soscount">
+            <column name="soscount" sql-type="int(11)"/>
+        </property>
+        <property name="complaintcount">
+            <column name="complaintcount" sql-type="int(11)"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

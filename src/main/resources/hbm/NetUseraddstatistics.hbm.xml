@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetUseraddstatistics" table="net_useraddstatistics" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="psgtotal">
+            <column name="psgtotal" sql-type="int(11)"/>
+        </property>
+        <property name="psgnewcount">
+            <column name="psgnewcount" sql-type="int(11)"/>
+        </property>
+        <property name="drivertotal">
+            <column name="drivertotal" sql-type="int(11)"/>
+        </property>
+        <property name="drivernewcount">
+            <column name="drivernewcount" sql-type="int(11)"/>
+        </property>
+        <property name="vechiletotal">
+            <column name="vechiletotal" sql-type="int(11)"/>
+        </property>
+        <property name="vechilenewtotal">
+            <column name="vechilenewtotal" sql-type="int(11)"/>
+        </property>
+        <property name="statisticsdate">
+            <column name="statisticsdate" sql-type="date"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

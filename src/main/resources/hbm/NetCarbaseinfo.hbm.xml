@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetCarbaseinfo" table="net_carbaseinfo" >
+        <id name="carid">
+            <column name="carid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyIdc">
+            <column name="companyIdc" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="vehicleno">
+            <column name="vehicleno" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="platecolor">
+            <column name="platecolor" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="seats">
+            <column name="seats" sql-type="int(11)"/>
+        </property>
+        <property name="brand">
+            <column name="brand" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="model">
+            <column name="model" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="vehicletype">
+            <column name="vehicletype" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="ownername">
+            <column name="ownername" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="vehiclecolor">
+            <column name="vehiclecolor" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="engineid">
+            <column name="engineid" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="vin">
+            <column name="vin" sql-type="varchar(17)" length="17"/>
+        </property>
+        <property name="certifydatea">
+            <column name="certifydatea" sql-type="date"/>
+        </property>
+        <property name="fueltype">
+            <column name="fueltype" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="enginedisplace">
+            <column name="enginedisplace" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="photoId">
+            <column name="photoId" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="certificate">
+            <column name="certificate" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="transagency">
+            <column name="transagency" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="transarea">
+            <column name="transarea" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="transdatestart">
+            <column name="transdatestart" sql-type="date"/>
+        </property>
+        <property name="transdatestop">
+            <column name="transdatestop" sql-type="date"/>
+        </property>
+        <property name="certifydateb">
+            <column name="certifydateb" sql-type="date"/>
+        </property>
+        <property name="fixstate">
+            <column name="fixstate" sql-type="int(11)"/>
+        </property>
+        <property name="nextfixdata">
+            <column name="nextfixdata" sql-type="date"/>
+        </property>
+        <property name="checkstate">
+            <column name="checkstate" sql-type="int(11)"/>
+        </property>
+        <property name="feeprintId">
+            <column name="feeprintId" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="gpsbrand">
+            <column name="gpsbrand" sql-type="varchar(255)"/>
+        </property>
+        <property name="gpsmodel">
+            <column name="gpsmodel" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="gpsimei">
+            <column name="gpsimei" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="gpsinstalldate">
+            <column name="gpsinstalldate" sql-type="date"/>
+        </property>
+        <property name="registerdate">
+            <column name="registerdate" sql-type="date"/>
+        </property>
+        <property name="commercialtype">
+            <column name="commercialtype" sql-type="int(11)"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)"/>
+        </property>
+        <property name="totalmile">
+            <column name="totalmile" sql-type="double(11,2)" precision="11" scale="2"/>
+        </property>
+        <property name="fareid">
+            <column name="fareid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="deviceid">
+            <column name="deviceid" sql-type="bigint(12)" not-null="true"/>
+        </property>
+        <property name="insurid">
+            <column name="insurid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="etagid">
+            <column name="etagid" sql-type="varchar(12)" length="12" not-null="true"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+        <property name="fisstate">
+            <column name="fisstate" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

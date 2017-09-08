@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetRatedDriver" table="net_rateddriver">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="companyidc">
+            <column name="companyidc" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="licenseid">
+            <column name="licenseid" sql-type="varchar(32)" length="32" not-null="true"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="int(10)"/>
+        </property>
+        <property name="testdate">
+            <column name="testdate" sql-type="date"/>
+        </property>
+        <property name="testdepartment">
+            <column name="testdepartment" sql-type="varchar(255)"/>
+        </property>
+    </class>
+</hibernate-mapping>

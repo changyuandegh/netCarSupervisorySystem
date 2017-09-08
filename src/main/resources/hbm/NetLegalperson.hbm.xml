@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetLegalperson" table="net_legalperson">
+        <id name="legalpersonid">
+            <column name="legalpersonid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="legalname">
+            <column name="legalname" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="legalid">
+            <column name="legalid" sql-type="varchar(18)" length="18"/>
+        </property>
+        <property name="legalphone">
+            <column name="legalphone" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="legalphoto">
+            <column name="legalphoto" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

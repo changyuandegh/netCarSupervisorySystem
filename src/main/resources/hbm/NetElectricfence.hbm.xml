@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetElectricfence" table="net_electricfence" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="int(11)"/>
+        </property>
+        <property name="shape">
+            <column name="shape" sql-type="int(11)"/>
+        </property>
+        <property name="radius">
+            <column name="radius" sql-type="float"  />
+        </property>
+        <property name="points">
+            <column name="points" sql-type="longtext" not-null="true"/>
+        </property>
+        <property name="encrypt">
+            <column name="encrypt" sql-type="int(11)"/>
+        </property>
+        <property name="startdate">
+            <column name="startdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="stopdate">
+            <column name="stopdate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="creatorid">
+            <column name="creatorid" sql-type="int(11)"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

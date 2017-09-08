@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetFare" table="net_fare">
+        <id name="fareid">
+            <column name="fareid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyidc">
+            <column name="companyidc" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="faretype">
+            <column name="faretype" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="faretypenote">
+            <column name="faretypenote" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="farevalidon">
+            <column name="farevalidon" sql-type="timestamp"/>
+        </property>
+        <property name="farevalidoff">
+            <column name="farevalidoff" sql-type="timestamp"/>
+        </property>
+        <property name="startfare">
+            <column name="startfare" sql-type="double(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="startmile">
+            <column name="startmile" sql-type="double(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="unitpricepermile">
+            <column name="unitpricepermile" sql-type="double(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="unitpriceperminute">
+            <column name="unitpriceperminute" sql-type="double(10,2)" precision="10" scale="2"/>
+        </property>
+        <property name="upprice">
+            <column name="upprice" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="uppricestartmile">
+            <column name="uppricestartmile" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="morningpeaktimeon">
+            <column name="morningpeaktimeon" sql-type="timestamp"/>
+        </property>
+        <property name="morningpeaktimeoff">
+            <column name="morningpeaktimeoff" sql-type="timestamp"/>
+        </property>
+        <property name="eveningpeaktimeon">
+            <column name="eveningpeaktimeon" sql-type="timestamp"/>
+        </property>
+        <property name="eveningpeaktimeoff">
+            <column name="eveningpeaktimeoff" sql-type="timestamp"/>
+        </property>
+        <property name="otherpeaktimeoff">
+            <column name="otherpeaktimeoff" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="peakunitprice">
+            <column name="peakunitprice" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="peakpricestartmile">
+            <column name="peakpricestartmile" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="lowspeedpriceperminute">
+            <column name="lowspeedpriceperminute" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="nightpricepermile">
+            <column name="nightpricepermile" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="otherprice">
+            <column name="otherprice" sql-type="double(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="pricestate">
+            <column name="pricestate" sql-type="int(11)"/>
+        </property>
+        <property name="nightpriceperminute">
+            <column name="nightpriceperminute" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="otherpeaktimeon">
+            <column name="otherpeaktimeon" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="prioritylevel">
+            <column name="prioritylevel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="waitfree">
+            <column name="waitfree" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="ratio">
+            <column name="ratio" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="nightstart">
+            <column name="nightstart" sql-type="timestamp"/>
+        </property>
+        <property name="waittime">
+            <column name="waittime" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="waitprice">
+            <column name="waitprice" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="waitstartbillingtime">
+            <column name="waitstartbillingtime" sql-type="timestamp"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

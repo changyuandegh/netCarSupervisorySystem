@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetCompanybaseinfo" table="net_companybaseinfo" >
+        <id name="companyid">
+            <column name="companyid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="companyidc">
+            <column name="companyidc" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="companyname">
+            <column name="companyname" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="identifier">
+            <column name="identifier" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="int(11)"/>
+        </property>
+        <property name="businessscope">
+            <column name="businessscope" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="contactaddress">
+            <column name="contactaddress" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="economictype">
+            <column name="economictype" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="regcapital">
+            <column name="regcapital" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="organization">
+            <column name="organization" sql-type="varchar(256)" length="256"/>
+        </property>
+        <property name="startdate">
+            <column name="startdate" sql-type="date"/>
+        </property>
+        <property name="stopdate">
+            <column name="stopdate" sql-type="date"/>
+        </property>
+        <property name="certificate">
+            <column name="certificate" sql-type="varchar(255)"/>
+        </property>
+        <property name="certifydate">
+            <column name="certifydate" sql-type="date"/>
+        </property>
+        <property name="certifystate">
+            <column name="certifystate" sql-type="varchar(8)" length="8"/>
+        </property>
+        <property name="operationarea">
+            <column name="operationarea" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="vehiclenum">
+            <column name="vehiclenum" sql-type="int(11)"/>
+        </property>
+        <property name="drivernum">
+            <column name="drivernum" sql-type="int(11)"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="serviceinstitutionsid">
+            <column name="serviceinstitutionsid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="legalpersonid">
+            <column name="legalpersonid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="fareid">
+            <column name="fareid" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

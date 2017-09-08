@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetCertificate" table="net_certificate" >
+        <id name="netcertificateid">
+            <column name="netcertificateid" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="certificateno">
+            <column name="certificateno" sql-type="varchar(128)" length="128"/>
+        </property>
+        <property name="networkcarinsueorganization">
+            <column name="networkcarinsueorganization" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="getnetworkcarissuedate">
+            <column name="getnetworkcarissuedate" sql-type="date"/>
+        </property>
+        <property name="getnetworkcarproofdate">
+            <column name="getnetworkcarproofdate" sql-type="date"/>
+        </property>
+        <property name="networkcarproofon">
+            <column name="networkcarproofon" sql-type="date"/>
+        </property>
+        <property name="getnetworkcarproofoff">
+            <column name="getnetworkcarproofoff" sql-type="date"/>
+        </property>
+        <property name="createtime">
+            <column name="createtime" sql-type="timestamp"/>
+        </property>
+        <property name="updatetime">
+            <column name="updatetime" sql-type="timestamp"/>
+        </property>
+    </class>
+</hibernate-mapping>

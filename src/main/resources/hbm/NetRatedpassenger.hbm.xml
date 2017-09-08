@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetRatedpassenger" table="net_ratedpassenger">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="companyidc">
+            <column name="companyidc" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="orderid">
+            <column name="orderid" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="evaluatetime">
+            <column name="evaluatetime" sql-type="timestamp"/>
+        </property>
+        <property name="servicescore">
+            <column name="servicescore" sql-type="int(10)"/>
+        </property>
+        <property name="driverscore">
+            <column name="driverscore" sql-type="int(10)" not-null="true"/>
+        </property>
+        <property name="vehiclescore">
+            <column name="vehiclescore" sql-type="int(10)" not-null="true"/>
+        </property>
+        <property name="detail">
+            <column name="detail" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

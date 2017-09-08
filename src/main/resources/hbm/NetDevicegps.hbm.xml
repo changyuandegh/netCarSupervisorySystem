@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetDevicegps" table="net_devicegps" >
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="deviceid">
+            <column name="deviceid" sql-type="bigint(12)"/>
+        </property>
+        <property name="driverregioncode">
+            <column name="driverregioncode" sql-type="int(11)"/>
+        </property>
+        <property name="positiontime">
+            <column name="positiontime" sql-type="timestamp"/>
+        </property>
+        <property name="longitude">
+            <column name="longitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="latitude">
+            <column name="latitude" sql-type="double(10,7)" precision="10" scale="7"/>
+        </property>
+        <property name="encrypt">
+            <column name="encrypt" sql-type="int(11)"/>
+        </property>
+        <property name="direction">
+            <column name="direction" sql-type="int(11)"/>
+        </property>
+        <property name="elevation">
+            <column name="elevation" sql-type="int(11)"/>
+        </property>
+        <property name="speed">
+            <column name="speed" sql-type="int(11)"/>
+        </property>
+        <property name="alarmstate">
+            <column name="alarmstate" sql-type="int(11)"/>
+        </property>
+        <property name="acc">
+            <column name="acc" sql-type="int(11)"/>
+        </property>
+        <property name="islocation">
+            <column name="islocation" sql-type="int(11)"/>
+        </property>
+        <property name="mileage">
+            <column name="mileage" sql-type="double(12,3)" precision="12" scale="3"/>
+        </property>
+    </class>
+</hibernate-mapping>

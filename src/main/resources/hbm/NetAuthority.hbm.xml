@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.netcar.entity.NetAuthority" table="net_authority">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="title">
+            <column name="title" sql-type="varchar(25)" length="25"/>
+        </property>
+        <property name="level">
+            <column name="level" sql-type="int(11)"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="groupid">
+            <column name="groupid" sql-type="int(11)"/>
+        </property>
+        <property name="url">
+            <column name="url" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="icon">
+            <column name="icon" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="desciption">
+            <column name="desciption" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="isUse">
+            <column name="isUse" sql-type="int(1)"/>
+        </property>
+        <property name="creatorid">
+            <column name="creatorid" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>
